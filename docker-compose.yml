@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/data
+    environment:
+      DB_PATH: /data/matai-azaka.db
+      NODE_ENV: production
+    restart: unless-stopped
